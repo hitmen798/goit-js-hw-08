@@ -18,7 +18,11 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "@vimeo/player": "github:vimeo/player.js",
+    "lodash": "github:lodash/lodash",
+    "lodash.throttle": "^4.1.1",
+    "modern-normalize": "^1.1.0",
+    "simplelightbox": "github:andreknieriem/simplelightbox"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
