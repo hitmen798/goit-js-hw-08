@@ -1,8 +1,8 @@
 {
-  "name": "goit-js-hw-08",
+  "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://hitmen798.github.io/goit-js-hw-08/",
+  "homepage": "https://arthyr-men.github.io/goit-js-hw-08",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
@@ -18,11 +18,10 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "@vimeo/player": "github:vimeo/player.js",
-    "lodash": "github:lodash/lodash",
-    "lodash.throttle": "^4.1.1",
+    "@vimeo/player": "^2.20.1",
+    "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
-    "simplelightbox": "github:andreknieriem/simplelightbox"
+    "simplelightbox": "^2.14.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

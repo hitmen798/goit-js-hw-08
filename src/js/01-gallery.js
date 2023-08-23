@@ -1,34 +1,33 @@
-
+// Add imports above this line
+const { galleryItems } = require('./gallery-items');
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-import { galleryItems } from './gallery-items.js';
+// Change code below this line
 
+// Пошук порожнього списку для майбутньої галереї
+const gallery = document.querySelector('.gallery');
+
+// Створення функції для розмітки галереї
+
+const makeGalleryMarkup = image => {
+  const { preview, original, description } = image;
+
+  return `<a class="gallery__item" href="${original}">
+    <img class="gallery__image" src="${preview}" alt="${description}" />
+  </a>`;
+};
+
+const makeGallery = galleryItems.map(makeGalleryMarkup).join('');
+
+// Додавання розмітки у список
+gallery.insertAdjacentHTML('afterbegin', makeGallery);
+
+// Створення самого лайтбоксу та додавання відображення напису з alt
+new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+
+// Change code below this line
 console.log(galleryItems);
-
-const list = document.querySelector('.gallery')
-
-function markup(items) {
-  return items.map((item) => `<li class="gallery__item">
-    <a class="gallery__link" href="${item.original}">
-       <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
-    </a>
- </li>`).join("")
-}
-
-
-list.insertAdjacentHTML('beforeend', markup(galleryItems))
-
-list.addEventListener('click', onClick)
-function onClick(evt) {
-  evt.preventDefault()
-  if (evt.target.tagName !== 'IMG') {
-    return
-  }
-}
-
-new SimpleLightbox('.gallery a', {
-  captionDelay: 250,
-  captionsData: 'alt',
-  captionPosition: 'bottom'
-}); 
